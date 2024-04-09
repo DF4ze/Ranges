@@ -19,6 +19,7 @@ In other words :
 App has to do 100 000 calls to the function
 - Number of simultaneous thread is contains between 5 and 30 (step of 5 : 5, 10, 15, 20, 25, 30).
 - Each thread will treat between 5 and 50 000 items (gradual step : 5, 10, 100, 1 000, 5 000, 10 000, 50 000, ...)
+  
 As this we can have a large comparator on how efficient is the multi-threading... and its limits.
  
 # Conclusion
@@ -39,5 +40,6 @@ In this case, it's like we're on mono-thread... so longer than a real multi-thre
 The optimization with items consists of seeing:
 - how many threads I can launch
 - how many items still have to proced
+  
 And with this, define the good balance of the number of item by lasting thread.
 The most optimal balance is to ensure that all lasting threads ended at the same time!
