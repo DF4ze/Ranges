@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.livingobjects.ranges.AppTest" time="0.164" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\df4ze\OneDrive\Documents\Spring\ranges\target\test-classes;C:\Users\df4ze\OneDrive\Documents\Spring\ranges\target\classes;C:\Users\df4ze\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\df4ze\.m2\repository\commons-cli\commons-cli\1.6.0\commons-cli-1.6.0.jar;C:\Users\df4ze\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\df4ze\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.20\bin"/>
+    <property name="sun.java.command" value="C:\Users\df4ze\AppData\Local\Temp\surefire13153076110752238824\surefirebooter-20240409171211034_3.jar C:\Users\df4ze\AppData\Local\Temp\surefire13153076110752238824 2024-04-09T17-12-10_613-jvmRun1 surefire-20240409171211034_1tmp surefire_0-20240409171211034_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\df4ze\OneDrive\Documents\Spring\ranges\target\test-classes;C:\Users\df4ze\OneDrive\Documents\Spring\ranges\target\classes;C:\Users\df4ze\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\df4ze\.m2\repository\commons-cli\commons-cli\1.6.0\commons-cli-1.6.0.jar;C:\Users\df4ze\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\df4ze\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\df4ze"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.20"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\df4ze\OneDrive\Documents\Spring\ranges"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\df4ze\AppData\Local\Temp\surefire13153076110752238824\surefirebooter-20240409171211034_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.20+9-LTS-256"/>
+    <property name="user.name" value="df4ze"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="localRepository" value="C:\Users\df4ze\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\df4ze\AppData\Local\Temp\"/>
+    <property name="java.version" value="11.0.20"/>
+    <property name="user.dir" value="C:\Users\df4ze\OneDrive\Documents\Spring\ranges"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.20\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/sts-4.20.1.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047/jre/bin/server;C:/sts-4.20.1.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Certbot\bin;C:\Program Files\PuTTY\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Java\jdk-19\bin\;C:\Tools\casperjs\bin;C:\Tools\phantomjs\bin;C:\Program Files\nodejs\;C:\Users\df4ze\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\df4ze\AppData\Local\Programs\Python\Python311\;C:\Users\df4ze\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\df4ze\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-19\bin\;;C:\Program Files\JetBrains\WebStorm 2023.2.5\bin;;C:\Users\df4ze\AppData\Roaming\npm;C:\sts-4.20.1.RELEASE;;."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="11.0.20+9-LTS-256"/>
+    <property name="java.specification.maintenance.version" value="2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="testApp" classname="com.livingobjects.ranges.AppTest" time="0.091">
+    <system-out><![CDATA[JUnit mode
+--== Benchmark Mono started ==--
+LowerBound    : 1
+HigherBound   : 10
+RangeNumber   : 10
+MaxIteration  : 10
+duration     : 00:00:00 002
+--== Benchmark ended ==--
+
+--== Benchmark Multithread started ==--
+LowerBound    : 1
+HigherBound   : 10
+RangeNumber   : 10
+MaxIteration  : 10
+MaxNbThreads  : 10
+NbOpeByThread : 1
+duration     : 00:00:00 003
+--== Benchmark ended ==--
+
+--== Benchmark Multithread MultiOperation started ==--
+LowerBound    : 1
+HigherBound   : 10
+RangeNumber   : 10
+MaxIteration  : 10
+MaxNbThreads  : 10
+NbOpeByThread : 5
+Mistake on results, expected : 5 founded :6 results
+duration     : 00:00:00 002
+--== Benchmark ended ==--
+
+--== Benchmark Multithread MultiOperation BenchMode config : ==--
+LowerBound    : 1
+HigherBound   : 10
+RangeNumber   : 10
+MaxIteration  : 10
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 10
+duration     : 00:00:00 001
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 100
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 500
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 1000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 5000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 10000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 50000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 100000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 5
+NbOpeByThread : 500000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 10
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 100
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 500
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 1000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 5000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 10000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 50000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 100000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 10
+NbOpeByThread : 500000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 10
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 100
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 500
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 1000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 5000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 10000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 50000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 100000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 15
+NbOpeByThread : 500000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 10
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 100
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 500
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 1000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 5000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 10000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 50000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 100000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 20
+NbOpeByThread : 500000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 10
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 100
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 500
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 1000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 5000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 10000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 50000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 100000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 25
+NbOpeByThread : 500000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 10
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 100
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 500
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 1000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 5000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 10000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 50000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 100000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+--== Benchmark Starting ==--
+MaxNbThreads  : 30
+NbOpeByThread : 500000
+duration     : 00:00:00 000
+--== Benchmark ended ==--
+
+---------------
+Bests results :
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=100]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=500]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=1000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=5000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=10000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=50000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=100000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=500000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=10]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=100]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=500]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=1000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=5000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=10000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=50000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=100000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=10, nbOpeByThread=500000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=10]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=100]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=500]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=1000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=5000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=10000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=50000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=100000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=15, nbOpeByThread=500000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=10]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=100]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=500]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=1000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=5000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=10000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=50000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=100000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=20, nbOpeByThread=500000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=10]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=100]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=500]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=1000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=5000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=10000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=50000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=100000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=25, nbOpeByThread=500000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=10]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=100]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=500]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=1000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=5000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=10000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=50000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=100000]
+00:00:00 000 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=30, nbOpeByThread=500000]
+00:00:00 001 [benchMode=MULTITHREAD_MULTITREATMENT_BENCH, maxNbThreads=5, nbOpeByThread=10]
+00:00:00 002 [benchMode=MONOTHREAD_MONOTREATMENT, maxNbThreads=null, nbOpeByThread=null]
+00:00:00 002 [benchMode=MULTITHREAD_MULTITREATMENT, maxNbThreads=10, nbOpeByThread=5]
+00:00:00 003 [benchMode=MULTITHREAD_MONOTREATMENT, maxNbThreads=10, nbOpeByThread=null]
+]]></system-out>
+  </testcase>
+</testsuite>
