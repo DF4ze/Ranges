@@ -6,7 +6,9 @@ I've choose to write a Java CLI application beacause this exercise doesn't need 
 
 No Spring or other, just a Maven for easy dependency management and easy build.
 As a CLI App, it can be driven on launch by command-line parameters.
+
 Hit -h to see them ;)
+
 
 I pushed this exercise as a demonstration of the efficiency of multi-threading
 4 types of bench mark is proposed,
