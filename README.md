@@ -10,15 +10,19 @@ As a CLI App, it can be driven on launch by command-line parameters.
 Hit -h to see them ;)
 
 
-I pushed this exercise as a demonstration of the efficiency of multi-threading
+I pushed this exercise as a demonstration of the efficiency of multi-threading.
 4 types of bench mark is proposed,
 Each is timed and is compared as "Who is the faster?"
 
 1st one is a simple lambda loop, which calls the function for each item.
+
 2nd is a multi-thread launch but each thread only runs 1 call for 1 item.
+
 3rd is a multi-thread launch with a bunch of items to have multiple calls in 1 thread.
+
 4th is a large multi-threading benchmark, executing several times the same test but with a different number of maximum thread and a different number of items.
 In other words :
+
 App has to do 100 000 calls to the function
 - Number of simultaneous thread is contains between 5 and 30 (step of 5 : 5, 10, 15, 20, 25, 30).
 - Each thread will treat between 5 and 50 000 items (gradual step : 5, 10, 100, 1 000, 5 000, 10 000, 50 000, ...)
