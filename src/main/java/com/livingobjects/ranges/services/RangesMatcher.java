@@ -2,28 +2,29 @@ package com.livingobjects.ranges.services;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.livingobjects.ranges.models.Ranges2;
+import com.livingobjects.ranges.models.Ranges;
 
 /**
  * Represent the unique access for the list of Ranges
  */
 public class RangesMatcher {
 
-	private static List<Ranges2> rangesList;
+	private static Set<Ranges> rangesSet;
 
 
 	/**
 	 * Force initialization with a list of Ranges
 	 */
-	public RangesMatcher(List<Ranges2> list) {
-		if (list == null || list.isEmpty()) {
+	public RangesMatcher(Set<Ranges> set) {
+		if (set == null || set.isEmpty()) {
 			throw new IllegalStateException("Given list is empty or null");
 		}
 
-		if (rangesList == null) {
-			rangesList = Collections.unmodifiableList(list);
+		if (rangesSet == null) {
+			rangesSet = Collections.unmodifiableSet(set);
 		}
 	}
 
@@ -38,9 +39,9 @@ public class RangesMatcher {
 	public List<String> marchingLabels(int item) {
 
 		// @formatter:off
-		return rangesList.stream()
+		return rangesSet.stream()
  				.filter(r -> r.contains(item))
- 				.map(Ranges2::getName)
+ 				.map(Ranges::name)
 				.collect(Collectors.toList());
 		// @formatter:on
 	}
@@ -48,8 +49,8 @@ public class RangesMatcher {
 	/**
 	 * Needed for JUnit tests
 	 */
-	protected static void resetRangesList() {
-		rangesList = null;
+	protected static void resetRangesSet() {
+		rangesSet = null;
 	}
 
 }

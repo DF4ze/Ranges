@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Semaphore;
 import java.util.stream.Collectors;
 
@@ -17,7 +18,7 @@ import org.apache.commons.cli.ParseException;
 
 import com.livingobjects.ranges.models.BenchMode;
 import com.livingobjects.ranges.models.BenchResult;
-import com.livingobjects.ranges.models.Ranges2;
+import com.livingobjects.ranges.models.Ranges;
 import com.livingobjects.ranges.services.RangesMatcher;
 import com.livingobjects.ranges.services.launch.MatcherRunnable;
 import com.livingobjects.ranges.services.tools.Chrono;
@@ -56,6 +57,16 @@ public class App {
 	// @formatter:on
 
 
+	/*
+	 * NOTE:
+	 * 
+	 * I've decided not to factor the benchmarks in order to maintain a certain
+	 * reading logic. This generates boiler-code but avoids the addition of
+	 * variables and the management of special cases that could disrupt reading. I
+	 * preferred to factor out 'decorative' code such as the display of information
+	 * or the recording of benchmark tests, etc...
+	 */
+
 	@SuppressWarnings("unused") // for "result" variables that are not used
 	public static void main(String[] args)
     {
@@ -65,7 +76,7 @@ public class App {
 
 
 		// Auto generation of data for all tests
-		List<Ranges2> generatedRanges = RangesBuilder.generateRanges(rangesNumber, lowerBound, higherBound);
+		Set<Ranges> generatedRanges = RangesBuilder.generateRanges(rangesNumber, lowerBound, higherBound);
 		List<Integer> items = RangesBuilder.generateItems(maxIteration, lowerBound, higherBound);
 		RangesMatcher rm = new RangesMatcher(generatedRanges); // unique instance of "engine" for all tests
 		Chrono chrono = new Chrono();
@@ -84,7 +95,7 @@ public class App {
 
 			chrono.pick();
 			// Calling marchingLabel for each item
-			List<List<String>> result = items.stream().map((Integer item) -> rm.marchingLabels(item))
+			List<List<String>> result = items.stream().map(item -> rm.marchingLabels(item))
 					.collect(Collectors.toList());
 
 			String timeInHHMMSS = chrono.compare();
@@ -128,13 +139,8 @@ public class App {
 				}
 
 				// waiting max 10min all thread's end before comparing Chrono
-				threads.forEach(t -> {
-					try {
-						t.join(10 * 60 * 1000);
-					} catch (InterruptedException e) {
-					}
-				}
-				);
+				joinAllThreads(threads);
+
 			} catch (InterruptedException e) {
 				System.out.println("Error acquiring semaphore : " + e.getMessage());
 			}
@@ -203,21 +209,17 @@ public class App {
 				}
 
 				// waiting max 10min all thread's end before comparing Chrono
-				threads.forEach(t -> {
-					try {
-						t.join(10 * 60 * 1000);
-					} catch (InterruptedException e) {
-					}
-				});
+				joinAllThreads(threads);
 
 				// fast checking results
-				threads.forEach(t -> {
-					MatcherRunnable r = threadRunnable.get(t);
-					if (r.getResult().size() != nbOpeByThread) {
-						System.out.println("Mistake on results, expected : " + nbOpeByThread + " founded :"
-								+ r.getResult().size() + " results");
-					}
-				});
+				fastCheckingResults(threads, threadRunnable, nbOpeByThread);
+//				threads.forEach(t -> {
+//					MatcherRunnable r = threadRunnable.get(t);
+//					if (r.getResult().size() != nbOpeByThread) {
+//						System.out.println("Mistake on results, expected : " + nbOpeByThread + " founded :"
+//								+ r.getResult().size() + " results");
+//					}
+//				});
 
 			} catch (InterruptedException e) {
 				System.out.println("Error acquiring semaphore : " + e.getMessage());
@@ -320,21 +322,18 @@ public class App {
 						}
 
 						// waiting max 10min all thread's end before comparing Chrono
-						threads.forEach(t -> {
-							try {
-								t.join(10 * 60 * 1000);
-							} catch (InterruptedException e) {
-							}
-						});
+						joinAllThreads(threads);
 
 						// fast checking results
-						threads.forEach(t -> {
-							MatcherRunnable r = threadRunnable.get(t);
-							if (r.getResult().size() != nobtr) {
-								System.out.println("Mistake on results, expected : " + nobtr + " founded :"
-										+ r.getResult().size() + " results");
-							}
-						});
+						fastCheckingResults(threads, threadRunnable, nobtr);
+
+//						threads.forEach(t -> {
+//							MatcherRunnable r = threadRunnable.get(t);
+//							if (r.getResult().size() != nobtr) {
+//								System.out.println("Mistake on results, expected : " + nobtr + " founded :"
+//										+ r.getResult().size() + " results");
+//							}
+//						});
 					} catch (InterruptedException e) {
 						System.out.println("Error acquiring semaphore : " + e.getMessage());
 					}
@@ -353,23 +352,37 @@ public class App {
 		 * Analyzing results
 		 */
 		// sort by most efficient
-		benchResultList.sort((BenchResult b1, BenchResult b2) -> b1.getDuration().compareTo(b2.getDuration()));
+		benchResultList.sort((BenchResult b1, BenchResult b2) -> b1.duration().compareTo(b2.duration()));
 
 		// print sorted result
 		System.out.println("\n---------------\nBests results :");
 		benchResultList.forEach(b -> System.out.println(b));
 	}
 
+	public static void joinAllThreads(List<Thread> threads) {
+		threads.forEach(t -> {
+			try {
+				t.join(10 * 60 * 1000);
+			} catch (InterruptedException e) {
+			}
+		});
+	}
+
+	public static void fastCheckingResults(List<Thread> threads, Map<Thread, MatcherRunnable> threadRunnable,
+			int nobtr) {
+		// fast checking results
+		threads.forEach(t -> {
+			MatcherRunnable r = threadRunnable.get(t);
+			if (r.getResult().size() != nobtr) {
+				System.out.println(
+						"Mistake on results, expected : " + nobtr + " founded :" + r.getResult().size() + " results");
+			}
+		});
+	}
+
 	public static void memorizeResult(BenchMode bm, String duration, Integer mntr, Integer nobtr) {
-		BenchResult br = new BenchResult();
-		br.setBenchMode(bm);
-		br.setDuration(duration);
-		br.setHigherBound(higherBound);
-		br.setLowerBound(lowerBound);
-		br.setMaxIteration(maxIteration);
-		br.setRangeNumber(rangesNumber);
-		br.setMaxNbThreads(mntr);
-		br.setNbOpeByThread(nobtr);
+		BenchResult br = new BenchResult(bm, lowerBound, higherBound, rangesNumber, maxIteration, mntr, nobtr,
+				duration);
 		benchResultList.add(br);
 	}
 

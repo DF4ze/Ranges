@@ -4,12 +4,13 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.livingobjects.ranges.models.Ranges2;
+import com.livingobjects.ranges.models.Ranges;
 
 @RunWith(JUnit4.class)
 public class RangesBuilderTest {
@@ -50,7 +51,7 @@ public class RangesBuilderTest {
 	@Test
 	public void testGenerateRangesCount() {
 
-		List<Ranges2> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
+		Set<Ranges> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
 
 		assertEquals(nbIteration, rangesList.size());
 	}
@@ -58,10 +59,10 @@ public class RangesBuilderTest {
 	@Test
 	public void testGenerateRangesValues() {
 
-		List<Ranges2> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
-		for (Ranges2 ranges : rangesList) {
-			assertEquals(true, ranges.getLowerBound() >= lb);
-			assertEquals(true, ranges.getHigherBound() <= hb);
+		Set<Ranges> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
+		for (Ranges ranges : rangesList) {
+			assertEquals(true, ranges.lowerBound() >= lb);
+			assertEquals(true, ranges.higherBound() <= hb);
 		}
 
 		assertEquals(nbIteration, rangesList.size());

@@ -1,38 +1,44 @@
 package com.livingobjects.ranges.services.tools;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
-import com.livingobjects.ranges.models.Ranges2;
+import com.livingobjects.ranges.models.Ranges;
 
 public class RangesBuilder {
 
 	/**
-	 * Function that generate severals {@link Ranges2}<br/>
-	 * The number of {@link Ranges2} generated depends on param "number"
+	 * Function that generate severals {@link Ranges}<br/>
+	 * The number of {@link Ranges} generated depends on param "number"
 	 * 
-	 * @param number Number of {@link Ranges2} that will be generated
+	 * @param number Number of {@link Ranges} that will be generated
 	 * 
-	 * @return the list of generated {@link Ranges2}
+	 * @return a Set of generated {@link Ranges}
 	 */
-	public static List<Ranges2> generateRanges(int number, int minRange, int maxRange) {
+	public static Set<Ranges> generateRanges(int number, int minRange, int maxRange) {
 		if (minRange > maxRange) {
 			throw new IllegalStateException("Invalid bounds: minRange > maxRange");
 		}
 
-		List<Ranges2> rangesList = new ArrayList<>();
+		Set<Ranges> rangesSet = new HashSet<>();
 
 		for (int i = 0; i < number; i++) {
 			int minBound = ThreadLocalRandom.current().nextInt(minRange, maxRange + 1);
 			int maxBound = ThreadLocalRandom.current().nextInt(minBound, maxRange + 1);
 
-			rangesList.add(new Ranges2(RangesBuilder.generateRangesName(), minBound, maxBound));
+			// If Ranges already exists, add one more loop
+			if (!rangesSet.add(new Ranges(RangesBuilder.generateRangesName(), minBound, maxBound))) {
+				number++;
+			}
+
 		}
 
-		return rangesList;
+		return rangesSet;
 	}
 
 	/**
