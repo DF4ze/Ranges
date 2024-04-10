@@ -21,27 +21,33 @@ public class MatcherRunnable implements Runnable {
 	 */
 	public void run() {
 		result = new ArrayList<>();
+		try {
+			// This mode of launching supposed to have item or operations initialized
+			if (item == null && operations == null)
+				throw new IllegalStateException("Item and operations are not initialized");
 
-		// This mode of launching supposed to have item or operations initialized
-		if (item == null && operations == null)
-			throw new IllegalStateException("Item and operations are not initialized");
+			// if on "single operation" mode, directly call marchingLabels
+			if (item != null) {
+				result.add(rangesMatcher.marchingLabels(item));
 
-		// if on "single operation" mode, directly call marchingLabels
-		if (item != null) {
-			result.add(rangesMatcher.marchingLabels(item));
+			} else if (operations != null) {
+				// if on "multiple operations" mode, launch marchingLabels on each item
+				// contained in Operations
+				result = operations.stream().map(item -> rangesMatcher.marchingLabels(item))
+						.collect(Collectors.toList());
+			}
 
-		} else if (operations != null) {
-			// if on "multiple operations" mode, launch marchingLabels on each item
-			// contained in Operations
-			result = operations.stream().map(item -> rangesMatcher.marchingLabels(item))
-					.collect(Collectors.toList());
+		} catch (Exception e) {
+			System.err.println("Error during thread run : " + e.getMessage());
+
+		} finally {
+			// When call is done, release the semaphore if exists
+			if (sema != null) {
+				sema.release();
+			}
 		}
 
 
-		// When call is done, release the semaphore if exists
-		if (sema != null) {
-			sema.release();
-		}
 	}
 
 	public List<List<String>> getResult() {
