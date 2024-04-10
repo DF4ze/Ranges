@@ -3,6 +3,7 @@ See ranges.pdf for full exercise instructions.
 
 # My choices
 I've choose to write a Java CLI application beacause this exercise doesn't need any interaction when it's running.
+
 No Spring or other, just a Maven for easy dependency management and easy build.
 As a CLI App, it can be driven on launch by command-line parameters.
 Hit -h to see them ;)
