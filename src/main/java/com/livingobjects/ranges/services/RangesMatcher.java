@@ -4,20 +4,20 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.livingobjects.ranges.models.Ranges;
+import com.livingobjects.ranges.models.Ranges2;
 
 /**
  * Represent the unique access for the list of Ranges
  */
 public class RangesMatcher {
 
-	private static List<Ranges> rangesList;
+	private static List<Ranges2> rangesList;
 
 
 	/**
 	 * Force initialization with a list of Ranges
 	 */
-	public RangesMatcher(List<Ranges> list) {
+	public RangesMatcher(List<Ranges2> list) {
 		if (list == null || list.isEmpty()) {
 			throw new IllegalStateException("Given list is empty or null");
 		}
@@ -40,7 +40,7 @@ public class RangesMatcher {
 		// @formatter:off
 		return rangesList.stream()
  				.filter(r -> r.contains(item))
- 				.map(Ranges::getName)
+ 				.map(Ranges2::getName)
 				.collect(Collectors.toList());
 		// @formatter:on
 	}

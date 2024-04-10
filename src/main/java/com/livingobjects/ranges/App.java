@@ -17,7 +17,7 @@ import org.apache.commons.cli.ParseException;
 
 import com.livingobjects.ranges.models.BenchMode;
 import com.livingobjects.ranges.models.BenchResult;
-import com.livingobjects.ranges.models.Ranges;
+import com.livingobjects.ranges.models.Ranges2;
 import com.livingobjects.ranges.services.RangesMatcher;
 import com.livingobjects.ranges.services.launch.MatcherRunnable;
 import com.livingobjects.ranges.services.tools.Chrono;
@@ -65,7 +65,7 @@ public class App {
 
 
 		// Auto generation of data for all tests
-		List<Ranges> generatedRanges = RangesBuilder.generateRanges(rangesNumber, lowerBound, higherBound);
+		List<Ranges2> generatedRanges = RangesBuilder.generateRanges(rangesNumber, lowerBound, higherBound);
 		List<Integer> items = RangesBuilder.generateItems(maxIteration, lowerBound, higherBound);
 		RangesMatcher rm = new RangesMatcher(generatedRanges); // unique instance of "engine" for all tests
 		Chrono chrono = new Chrono();

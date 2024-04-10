@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.livingobjects.ranges.models.Ranges;
+import com.livingobjects.ranges.models.Ranges2;
 
 @RunWith(JUnit4.class)
 public class RangesBuilderTest {
@@ -50,7 +50,7 @@ public class RangesBuilderTest {
 	@Test
 	public void testGenerateRangesCount() {
 
-		List<Ranges> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
+		List<Ranges2> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
 
 		assertEquals(nbIteration, rangesList.size());
 	}
@@ -58,8 +58,8 @@ public class RangesBuilderTest {
 	@Test
 	public void testGenerateRangesValues() {
 
-		List<Ranges> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
-		for (Ranges ranges : rangesList) {
+		List<Ranges2> rangesList = RangesBuilder.generateRanges(nbIteration, lb, hb);
+		for (Ranges2 ranges : rangesList) {
 			assertEquals(true, ranges.getLowerBound() >= lb);
 			assertEquals(true, ranges.getHigherBound() <= hb);
 		}

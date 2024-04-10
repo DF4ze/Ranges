@@ -3,13 +3,13 @@ package com.livingobjects.ranges.models;
 import lombok.Data;
 
 @Data
-public class Ranges {
+public class Ranges2 {
 
 	private String name;
 	private Integer lowerBound;
 	private Integer higherBound;
 
-	public Ranges(String name, Integer lowerBound, Integer higherBound) {
+	public Ranges2(String name, Integer lowerBound, Integer higherBound) {
 		super();
 		this.name = name;
 		this.lowerBound = lowerBound;

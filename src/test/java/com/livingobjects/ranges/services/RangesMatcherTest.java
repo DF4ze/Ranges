@@ -10,21 +10,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.livingobjects.ranges.models.Ranges;
+import com.livingobjects.ranges.models.Ranges2;
 import com.livingobjects.ranges.services.launch.MatcherRunnable;
 import com.livingobjects.ranges.services.tools.RangesBuilder;
 
 @RunWith(JUnit4.class)
 public class RangesMatcherTest {
 
-	private static List<Ranges> allRanges;
+	private static List<Ranges2> allRanges;
 	private static List<Integer> items;
 
 	@BeforeClass
 	public static void init() {
-		Ranges r1 = new Ranges("A", 1, 5);
-		Ranges r2 = new Ranges("B", 3, 8);
-		Ranges r3 = new Ranges("C", 5, 10);
+		Ranges2 r1 = new Ranges2("A", 1, 5);
+		Ranges2 r2 = new Ranges2("B", 3, 8);
+		Ranges2 r3 = new Ranges2("C", 5, 10);
 
 		allRanges = new ArrayList<>();
 		allRanges.add(r1);
